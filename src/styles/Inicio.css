@@ -1,0 +1,229 @@
+:root {
+  --color-primary: #2563EB;
+  --color-secondary: #1E3A8A;
+  --color-accent: #6366F1;
+  --color-bg: #F9FAFB;
+  --color-text: #1F2937;
+  --color-muted: #6B7280;
+  --font-main: 'Poppins', sans-serif;
+}
+
+/* Hero */
+.hero-section {
+  position: relative;
+  height: 360px;
+  background: linear-gradient(135deg, rgba(24, 27, 35, 0.356), rgba(91,123,196,0.85)),
+              url('../assets/condominio.jpeg') center/cover;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-family: var(--font-main);
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* Grid principal del inicio */
+.inicio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.25rem;
+}
+
+.payment-card {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.reservas-card {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.notices-card {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.correspondence-card {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-label {
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+.payment-amount {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+.notice-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 0.25rem 0;
+}
+
+.notice-date {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.reservation-name {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.reservation-date {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+.correspondence-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 120px;
+}
+
+@media (max-width: 768px) {
+  .inicio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-card,
+  .reservas-card,
+  .notices-card,
+  .correspondence-card {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(128, 127, 127, 0.08);
+  border: 1px solid #E5E7EB;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(85, 84, 84, 0.12);
+}
+
+.card-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.card-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.btn-primary {
+  background: var(--color-secondary);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: #1E40AF;
+  box-shadow: 0 4px 12px rgba(30,58,138,0.3);
+}
+
+.notice-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  background: #fefeff;
+  border-radius: 16px;
+  border: 1px solid #DBEAFE;
+}
+
+.notice-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.notice-icon-purple {
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+}
+
+.notice-icon-blue {
+  background: linear-gradient(135deg, #3B82F6, #2563EB);
+}
+
+.reservation-item,
+.correspondence-empty {
+  background: var(--color-bg);
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  padding: 1.25rem;
+  font-family: var(--font-main);
+}
+
+.empty-text {
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary {
+    padding: 0.75rem 2rem;
+  }
+}

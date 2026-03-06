@@ -1,34 +1,52 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Menu from './componentes/MenuComp'
+import Header from './componentes/HeaderComp'
+import Inicio from './vistas/Inicio'
+import Chat from './vistas/Chat'
+import Reservas from './vistas/Reservas'
+import Login from './vistas/Login'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [currentView, setCurrentView] = useState('inicio')
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const renderView = () => {
+    switch(currentView) {
+      case 'inicio':
+        return <Inicio />
+      case 'reservas':
+        return <Reservas />
+      case 'chat':
+        return <Chat />
+      default:
+        return <Inicio />
+    }
+  }
+
+  if (!isLoggedIn) {
+    return <Login onLogin={() => setIsLoggedIn(true)} />
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app">
+      <Menu 
+        currentView={currentView} 
+        setCurrentView={setCurrentView}
+        isMobileMenuOpen={isMobileMenuOpen}
+        setIsMobileMenuOpen={setIsMobileMenuOpen}
+      />
+      <div className="main-content">
+        <Header 
+          isMobileMenuOpen={isMobileMenuOpen}
+          setIsMobileMenuOpen={setIsMobileMenuOpen}
+        />
+        <div className="content-area">
+          {renderView()}
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
