@@ -24,8 +24,6 @@ const areaData = [
 ];
 
 const reservasIniciales = [
-  { id: 1, area: 'Piscina', fecha: '14/02/2026', estado: 'Confirmada' },
-  { id: 2, area: 'Salón de eventos', fecha: '19/10/2026', estado: 'Pendiente' },
 ];
 
 const Reservas = () => {
@@ -114,7 +112,7 @@ const Reservas = () => {
             <tbody>
               {reservas.length === 0 ? (
                 <tr>
-                  <td colSpan={4} className="tabla-vacia">No tienes reservas activas</td>
+                  <td colSpan={4} className="tabla-vacia">No tienes reservas</td>
                 </tr>
               ) : (
                 reservas.map((r) => (

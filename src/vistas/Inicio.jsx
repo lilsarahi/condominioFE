@@ -5,7 +5,6 @@ import { useEchoPublic } from '@laravel/echo-react';
 
 const Inicio = () => {
 
-
 useEchoPublic("channel-name", ".Mensaje", (data) => {
   console.log(data.text);
 })
@@ -22,7 +21,7 @@ useEchoPublic("channel-name", ".Mensaje", (data) => {
 
       <div className="inicio-grid">
         <div className="card payment-card">
-          <h2 className="card-title">¡Hola, Sarahi!</h2>
+          <h2 className="card-title">¡Hola, Sarahí!</h2>
           <p className="payment-label">Próximo pago:</p>
           <p className="payment-amount">$220.00</p>
           <button className="btn-primary">Pagar ahora</button>

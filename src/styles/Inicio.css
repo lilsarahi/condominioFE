@@ -8,12 +8,9 @@
   --font-main: 'Poppins', sans-serif;
 }
 
-/* Hero */
 .hero-section {
   position: relative;
   height: 360px;
-  background: linear-gradient(135deg, rgba(24, 27, 35, 0.356), rgba(91,123,196,0.85)),
-              url('../assets/condominio.jpeg') center/cover;
   border-radius: 24px;
   display: flex;
   align-items: center;
@@ -30,7 +27,6 @@
   text-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
-/* Grid principal del inicio */
 .inicio-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
